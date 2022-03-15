@@ -16,12 +16,10 @@ def bubbleSort(arr):
         for j in range(i):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
-
 
 success = True
-for _ in range(5000):
-    arr = generateRandomArr(100, 10)
+for _ in range(50000):
+    arr = generateRandomArr(10, 100)
     arr1 = arr.copy()
     arr1.sort()
     bubbleSort(arr)
@@ -31,6 +29,6 @@ for _ in range(5000):
         success = False
         break
 print("nice" if success else "error")
-arr = generateRandomArr(100, 10)
-bubbleSort(arr)
-print(arr)
+arr2 = generateRandomArr(10, 100)
+bubbleSort(arr2)
+print(arr2)
