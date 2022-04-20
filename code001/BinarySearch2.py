@@ -2,32 +2,33 @@
 import random
 
 
-# 查找最靠左的索引
+# 查找最靠右的索引
 def binarySearch(lst, num):
     if lst is None or len(lst) == 0:
         return -1
     begin = 0
     end = len(lst) - 1
-    minIndex = -1
+    maxIndex = -1
     while begin <= end:
         midden = (begin + end) // 2
         if lst[midden] == num:
-            minIndex = midden
-            end = midden - 1
+            maxIndex = midden
+            begin = midden + 1
         elif lst[midden] > num:
             end = midden - 1
         elif lst[midden] < num:
             begin = midden + 1
-    return minIndex
+    return maxIndex
 
 
 def loopSearch(lst, num):
     if lst is None or len(lst) == 0:
         return -1
+    maxIndex = -1
     for index, value in enumerate(lst):
         if value == num:
-            return index
-    return -1
+            maxIndex = index
+    return maxIndex
 
 
 if __name__ == '__main__':
